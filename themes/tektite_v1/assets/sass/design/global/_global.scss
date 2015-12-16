@@ -1,0 +1,78 @@
+////////////////////////
+// Design Globals
+////////////////////////
+
+@import
+  "menu",
+  "block-title",
+  "footer"
+;
+
+body {
+  background: $client-bg;
+}
+
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.clearfix { display: inline-block; }
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+
+
+.section-title {
+  margin: 0 0 1rem;
+  font-weight: normal;
+  @include rem(2.0);
+  color: $client-gray-dark;
+}
+
+
+.img-left,
+.outside-left {
+  float: left;
+  margin: 1rem 1rem 1rem 0;
+
+  @include breakpoint($med) {
+    margin-right: 2rem;
+  }
+}
+.img-right,
+.outside-right {
+  float: right;
+  margin: 1rem 0 1rem 1rem;
+
+  @include breakpoint($med) {
+    margin-left: 2rem;
+  }
+}
+
+
+.sticky-header {
+  #main {
+    padding-top: 90px;
+  }
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+}
+
+/*.stickem-container {
+  position: relative;
+}
+.stickit {
+  position: fixed;
+  top: 0;
+}
+.stickit-end {
+  position: absolute;
+  bottom: 0;
+}*/

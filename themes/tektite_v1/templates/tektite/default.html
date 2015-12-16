@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <!-- Temp -->
+  <div class="story-grid-switcher">
+    Switch
+    <a href="#" class="five">Five</a>
+    <a href="#" class="three">Three</a>
+    <a href="#" class="list">List</a>
+  </div>
+
+  <body class="{{ page.body-class }}">
+
+    {% include components/ads/ad-top.html %}
+
+    {% include header.html %}
+
+    <div id="main">
+      {% include components/toppers/story-grid-list.html %}
+      {% include components/toppers/story-grid-3.html %}
+      {% include components/toppers/story-grid-5.html %}
+
+      <div id="content" class="page-content">
+        {{ content }}
+      </div>
+
+      <aside id="sidebar-second">
+        <section class="sidebar-container">
+          {% include components/ads/ad-sidebar-one.html %}
+          {% include components/sidebar/popular.html %}
+          {% include components/newsletters/newsletter-select.html %}
+        </section>
+      </aside>
+    </div>
+
+    {% include footer.html %}
+
+  </body>
+
+</html>

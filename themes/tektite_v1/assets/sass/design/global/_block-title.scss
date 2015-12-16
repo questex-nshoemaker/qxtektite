@@ -1,0 +1,12 @@
+.block-title {
+  @include rem(2.0);
+  font-weight: 700;
+  padding: 1.5rem;
+  margin: 0;
+
+  #sidebar-second & {
+    border-bottom: 1px solid $client-gray;
+    color: $client-primary;
+    padding: 1rem;
+  }
+}

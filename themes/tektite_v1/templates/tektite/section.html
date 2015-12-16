@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body class="{{ page.body-class }}">
+
+    {% include components/ads/ad-top.html %}
+
+    {% include header.html %}
+
+    <div id="main">
+      {% include components/toppers/story-grid-3.html %}
+
+      <div id="content" class="page-content">
+        {{ content }}
+      </div>
+
+      <aside id="sidebar-second">
+        <section class="sidebar-container">
+          {% include components/ads/ad-sidebar-one.html %}
+          {% include components/sidebar/popular.html %}
+          {% include components/newsletters/newsletter.html %}
+        </section>
+      </aside>
+    </div>
+
+    {% include footer.html %}
+
+  </body>
+
+</html>

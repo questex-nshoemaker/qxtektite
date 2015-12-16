@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body class="{{ page.body-class }}">
+
+    {% include components/ads/ad-top.html %}
+
+    {% include header.html %}
+
+    <div id="content">
+      <div class="article-content">
+        {% include components/socialmedia/sticky.html %}
+        {{ content }}
+      </div>
+    </div>
+
+    {% include article-bottom.html %}
+
+    {% include content-bottom.html %}
+
+    {% include footer.html %}
+
+  </body>
+
+</html>

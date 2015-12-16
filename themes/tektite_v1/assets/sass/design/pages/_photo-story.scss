@@ -1,0 +1,186 @@
+.photo-story {
+  margin: 2.4rem 0;
+
+  #header {
+    margin: 4rem auto;
+  }
+
+  #content {
+
+    .main-image {
+
+      .content {
+        bottom: inherit;
+        background: none;
+        padding: 0;
+
+        @include breakpoint($med) {
+          top: 2.4rem;
+          padding: 0 2.4rem;
+        }
+
+        .wrapper {
+          padding: 2rem;
+          @include background(rgba(0,0,0,0.7));
+
+          @include breakpoint($med) {
+            padding: 2.4rem;
+          }
+
+          h1.page-title {
+            margin: 0 0 1rem;
+            padding: 0;
+            border: 0;
+            color: $white;
+            @include rem(1.8);
+            line-height: 1.25;
+
+            @include breakpoint($med) {
+              @include rem(3.6);
+              line-height: 1.3;
+            }
+          }
+
+          p {
+            @include rem(1.6);
+            font-weight: 500;
+            margin: 1rem 0;
+          }
+
+          .byline {
+            margin: 0;
+            padding: 0;
+            @include rem(1.6);
+            line-height: 1.5;
+            font-style: italic;
+            font-weight: 500;
+            color: $client-primary-light;
+
+            a {
+              color: $client-primary-light;
+              font-weight: 500;
+            }
+
+            .date {
+              font-style: normal;
+            }
+          }
+        }
+      }
+
+      img.story-image {
+        width: 100%;
+        max-width: auto;
+      }
+    }
+
+    .photo-story-content {
+      position: relative;
+      background: $client-gray-dark;
+      color: $white;
+      margin-bottom: 2.4rem;
+      border-bottom: 7.2rem solid $client-gray-dark;
+
+      &:after {
+        content:"";
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        border-left: 2px solid $client-primary-light;
+      }
+
+      .wrapper {
+        position: relative;
+        z-index: 1;
+
+        @include breakpoint($med) {
+          width: 740px;
+        }
+        @include breakpoint($lg) {
+          width: 960px;
+        }
+
+        .inline-story-content {
+          padding: 7.2rem 0.8rem 0;
+          text-align: center;
+          max-width: 540px;
+          margin: 0 auto;
+
+          @include breakpoint($med) {
+            max-width: 100%;
+            text-align: left;
+            float: left;
+            margin-right: 7.2rem;
+            padding: 7.2rem 0 0;
+
+            &:nth-child(even) {
+              float: right;
+              margin-left: 7.2rem;
+              margin-right: 0;
+
+              img {
+                float: right;
+              }
+
+              .inline-caption {
+                float: right;
+                margin: 0 2.2rem;
+
+                @include breakpoint($lg) {
+                  margin: 0 7.2rem 0 0;
+                }
+              }
+            }
+          }
+
+          img {
+            width: 100%;
+
+            @include breakpoint($med) {
+              max-width: 740px;
+            }
+          }
+
+          .inline-caption {
+            text-align: left;
+            max-width: 328px;
+            position: relative;
+            margin: 0 2.2rem;
+            z-index: 2;
+
+            @include breakpoint($lg) {
+              max-width: 340px;
+              margin: 0 0 0 7.2rem;
+            }
+
+            h2 {
+              color: $white;
+              @include rem(2.4);
+              margin-top: 2.4rem;
+            }
+          }
+
+          &:last-child {
+            padding-top: 0;
+            margin-top: 7.2rem;
+            background: $client-gray-dark;
+
+            .inline-caption {
+              margin: 0 auto;
+              max-width: 740px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.sticky-header {
+
+    #content {
+      padding-top: 120px;
+    }
+  }
+}

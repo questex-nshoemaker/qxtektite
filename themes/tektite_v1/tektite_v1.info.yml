@@ -1,0 +1,16 @@
+name: Tektite v1
+description: This is a custom Drupal 8 theme for the Questex Digital Platform Tektite project.
+type: theme
+core: 8.x
+
+regions:
+  header:      'Header'
+  main_nav:    'Main Navigation'
+  content:     'Main Content'
+  sidebar_one: 'Sidebar One'
+  sidebar_two: 'Sidebar Two'
+  footer:      'Footer'
+
+libraries:
+  - tektite_v1/global-styling
+  - tektite_v1/global-js

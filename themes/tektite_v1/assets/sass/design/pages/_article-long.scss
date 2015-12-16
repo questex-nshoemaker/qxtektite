@@ -1,0 +1,148 @@
+.article-long {
+  margin: 2.4rem 0;
+
+  #header {
+    margin: 4rem auto;
+  }
+
+  #content {
+
+    .article-content {
+      position: relative;
+    }
+
+    .main-image {
+
+      .content {
+        bottom: inherit;
+        top: 0;
+
+        .wrapper {
+          padding: 2rem 0;
+
+          @include breakpoint($med) {
+            padding: 2.4rem;
+          }
+
+          h1.page-title {
+            max-width: 660px;
+            margin: 0 0 1rem;
+            padding: 0;
+            border: 0;
+            color: $white;
+            @include rem(1.8);
+            line-height: 1.25;
+
+            @include breakpoint($med) {
+              @include rem(3.6);
+              line-height: 1.3;
+            }
+          }
+
+          .byline {
+            margin: 0;
+            padding: 0;
+            @include rem(1.6);
+            line-height: 1.5;
+            font-style: italic;
+            font-weight: 500;
+
+            a {
+              color: $white;
+              font-weight: 500;
+            }
+
+            .date {
+              font-style: normal;
+            }
+          }
+        }
+      }
+
+      img.article-image {
+        width: 100%;
+        max-width: auto;
+      }
+    }
+
+    .article-long-content {
+      background: $white;
+      margin-bottom: 2.4rem;
+      padding: 2.4rem;
+
+      .article-long-wrapper {
+        margin: 0 auto;
+        max-width: 1045px;
+
+        .content {
+          margin: 0 auto;
+          max-width: 745px;
+        }
+      }
+    }
+
+    .byline-bottom {
+      padding-top: 1.6rem;
+      margin-top: 2rem;
+      border-top: 2px solid $client-gray;
+      font-style: italic;
+      @include rem(1.5);
+
+      .date {
+        display: block;
+        margin: 0.2rem 0 0.5rem;
+
+        @include breakpoint($med) {
+          display: inline-block;
+          margin: 0 2rem;
+          padding: 0 2rem;
+          line-height: 1.1;
+          border-left: 1px solid $client-gray-dark;
+          border-right: 1px solid $client-gray-dark;
+        }
+      }
+
+      .taxonomy {
+        @extend %btn;
+        padding: 0.2rem 1.4rem !important;
+        @include rem(1.4);
+        font-style: italic;
+        font-weight: 500 !important;
+      }
+    }
+  }
+
+  &.sticky-header {
+
+    #content {
+      padding-top: 120px;
+    }
+  }
+
+  #social-media {
+    position: absolute;
+    left: 0;
+    top: 230px;
+    z-index: 2;
+    background: $client-primary-light;
+
+    a {
+      display: block;
+      padding: 1rem 1.2rem;
+
+      &:focus,
+      &:hover {
+        text-decoration: none;
+      }
+
+      &:before {
+        @include rem(2.2);
+        color: $white;
+      }
+
+      &:hover:before {
+        color: $client-primary-dark;
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.ad {
+  margin-bottom: 2.4rem;
+
+  &.top-ad {
+    display: none;
+    text-align: center;
+
+    @include breakpoint($med) {
+      display: block;
+    }
+  }
+
+  &.sidebar-ad-one.sticky {
+    position: fixed;
+    z-index: 999;
+  }
+}

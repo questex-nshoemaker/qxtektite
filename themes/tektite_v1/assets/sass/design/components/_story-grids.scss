@@ -1,0 +1,355 @@
+.story-grid {
+  @include add-gutter(0);
+  margin-bottom: 2.6rem;
+
+  .main-image {
+    overflow: hidden;
+    float: left;
+    width: 100%;
+
+    @include breakpoint($med) {
+      @include grid-span(8,1);
+    }
+
+    img {
+      width: 100%;
+
+      @include breakpoint($med) {
+        height: 390px;
+      }
+      @include breakpoint($lg) {
+        height: 488px;
+      }
+      @include breakpoint($xl) {
+        height: 603px;
+      }
+    }
+  }
+
+  // Grid List
+  .grid-list {
+    clear: both;
+
+    @include breakpoint ($med) {
+      @include grid-span(4,9);
+    }
+
+    .block-title {
+      background: $client-primary;
+      color: $white;
+      cursor: pointer;
+      transition: background .5s ease;
+
+      &:hover {
+        background: $client-primary-dark;
+      }
+
+      @include breakpoint($med) {
+        display: none;
+      }
+
+      span {
+        float: right;
+
+        @include breakpoint($med) {
+          display: none;
+        }
+
+        &.vflip {
+          @include transform (rotate(180deg));
+        }
+      }
+    }
+
+    // Grid List Content
+    .grid-content {
+      margin: 0;
+      padding: 0;
+
+      // List
+      li,
+      .grid-item {
+        list-style-type: none;
+        padding: 1rem 1.5rem;
+        background: $white;
+
+        @include breakpoint($med) {
+          padding: 1rem 2.5rem;
+        }
+
+        &:nth-of-type(odd) {
+          background: lighten($client-gray, 17.55%);
+        }
+
+        h3 {
+          padding: 0;
+          margin: 0 0 .35rem;
+          line-height: 1.25;
+
+          a {
+            @include rem(1.6);
+            color: $client-secondary;
+
+            @include breakpoint($med) {
+              @include rem(1.4);
+            }
+            @include breakpoint($lg) {
+              @include rem(1.6);
+            }
+          }
+        }
+
+        .byline,
+        time {
+          @include rem(1.4);
+          color: $menu-dropdown-bg;
+        }
+      }
+    }
+  }
+
+
+  // Grid List
+  &.story-grid-list {
+
+    .grid-list {
+      position: relative;
+      background: $white;
+
+      @include breakpoint($med) {
+        @include grid-span(4,9);
+        max-height: 390px;
+        overflow-y: scroll;
+      }
+      @include breakpoint($lg) {
+        max-height: 488px;
+      }
+      @include breakpoint($xl) {
+        max-height: inherit;
+        height: 603px;
+      }
+
+      .block-title {
+        @include breakpoint($med) {
+          display: block;
+        }
+      }
+    }
+  }
+
+
+  // Grid 5 & Grid 3
+  &.story-grid-5,
+  &.story-grid-3 {
+
+    .grid-list {
+
+      .grid-content {
+
+        .grid-item {
+
+          .grid-img {
+
+            img {
+              display: none;
+            }
+          }
+
+          .content {
+
+            h3 {
+              margin-bottom: 0.6rem
+            }
+
+            .byline {
+              color: $menu-dropdown-bg;
+            }
+          }
+
+          @include breakpoint($med) {
+            padding: 0;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            position: relative;
+            border: 1px solid $client-primary;
+
+            .grid-img {
+
+              img {
+                display: block;
+                width: 100%;
+                max-width: none;
+              }
+            }
+
+            .content {
+              position: absolute;
+              bottom: 0;
+              background: rgba($client-primary-light, 0.85);
+              color: $white;
+              padding: 2rem;
+
+              @include breakpoint($med) {
+                padding: 1.5rem;
+              }
+              @include breakpoint($lg) {
+                padding: 2rem;
+              }
+
+              h3 {
+                padding: 0;
+                margin: 0;
+                @include rem(1.6);
+                line-height: 1.25;
+              }
+
+              a {
+                color: $white;
+              }
+
+              .byline {
+                color: $white;
+                font-style: italic;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+  // Grid 5
+  &.story-grid-5 {
+
+    .main-image {
+
+      @include breakpoint ($med) {
+        @include grid-span(6,1);
+      }
+
+      img {
+        height: auto;
+
+        @include breakpoint ($med) {
+          height: 353px;
+        }
+        @include breakpoint ($lg) {
+          height: 403px;
+        }
+        @include breakpoint ($xl) {
+          height: 453px;
+        }
+      }
+    }
+
+    .grid-list {
+
+      @include breakpoint ($med) {
+        @include grid-span(6,7);
+      }
+
+      .grid-content {
+
+        .grid-item {
+
+          @include breakpoint($med) {
+            @include grid-span(6,1);
+
+            &:nth-child(1) {
+              border-bottom: 0;
+              border-right: 0;
+            }
+
+            &:nth-child(2) {
+              border-bottom: 0;
+            }
+
+            &:nth-child(3) {
+              border-right: 0;
+            }
+
+            .grid-img,
+            .grid-img img {
+              //height: 225px;
+
+              @include breakpoint ($med) {
+                height: 175px;
+              }
+              @include breakpoint ($lg) {
+                height: 200px;
+              }
+              @include breakpoint ($xl) {
+                height: 225px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+  // Grid 3
+  &.story-grid-3 {
+
+    .main-image {
+
+      .grid-item {
+
+        @include breakpoint($med) {
+          .content {
+            max-width: 585px;
+          }
+        }
+      }
+    }
+
+    .grid-list {
+
+      .grid-content {
+
+        .grid-item {
+
+          @include breakpoint($med) {
+
+            &:last-child {
+              border-top: 0;
+            }
+
+            .grid-img {
+
+              @include breakpoint($med) {
+                max-width: 400px;
+                max-height: 300px;
+                overflow: hidden;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// Scroll More on Grid List
+#scrollMore {
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  height: 100px;
+  margin: -100px auto 0;
+  width: 100%;
+  @include background(filter-gradient(ie-hex-str(rgba(255,255,255,0)), ie-hex-str(rgba(255,255,255,1)))); // For IE
+  @include background(linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0.7) 30%, rgba(255,255,255,0.9) 70%, $white));
+
+  span {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    margin: auto;
+    margin-left: -8px;
+    color: $client-primary;
+  }
+}

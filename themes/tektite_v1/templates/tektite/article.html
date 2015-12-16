@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body class="{{ page.body-class }}">
+
+    {% include components/ads/ad-top.html %}
+
+    {% include header.html %}
+
+    <div id="main">
+      <div id="content" class="page-content">
+        <div class="taxonomy">Taxonomy</div>
+        <h1 class="page-title">Article heading. Lorem ipsum dolor Lorem ipsum dolor sit amet</h1>
+        <div class="byline">by <a href="#">first last</a> | Oct 15, 2015</div>
+        <div class="article-content">
+          {% include components/socialmedia/sticky.html %}
+          {{ content }}
+        </div>
+      </div>
+
+      <aside id="sidebar-second">
+        <section class="sidebar-container top">
+          {% include components/sidebar/popular.html %}
+          {% include components/ads/ad-sidebar-one.html %}
+        </section>
+        <section class="sidebar-container bottom">
+          {% include components/newsletters/newsletter.html %}
+          {% include components/ads/ad-sidebar-two.html %}
+          {% include components/author/author-sidebar.html %}
+        </section>
+      </aside>
+    </div>
+
+    {% include article-bottom.html %}
+
+    {% include content-bottom.html %}
+
+    {% include footer.html %}
+
+  </body>
+
+</html>

@@ -1,0 +1,74 @@
+.author {
+  background: $white;
+  border-top: 1px solid lighten($client-gray, 10%);
+  padding: 2rem;
+  margin-bottom: 2.4rem;
+
+  h3 {
+    margin: 0;
+  }
+
+  .content {
+    overflow: hidden;
+  }
+
+  .author-portrait {
+    float: right;
+  }
+
+  .links {
+    clear: both;
+
+    ul {
+
+      li {
+        list-style-type: none;
+        float: left;
+
+        a {
+          margin-right: 2rem;
+          padding: 0.5rem 0;
+        }
+      }
+    }
+  }
+}
+
+// Sidebar author short block
+.author-short {
+  margin-bottom: 2.4rem;
+
+  .section-title {
+    color: $gray_30;
+    font-size: 1.6rem;
+    line-height: 1.25;
+    padding-bottom: 5px;
+    border-bottom: 1px solid $client-gray;
+  }
+
+  .author-portrait {
+    float: left;
+    max-width: 75px;
+    margin-right: 10px;
+  }
+
+  .content {
+    overflow: hidden;
+    color: $gray_30;
+    line-height: 1.5;
+    @include rem(1.5);
+
+    p {
+      margin-top: -5px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      a {
+        font-weight: bold;
+        color: $client-secondary;
+      }
+    }
+  }
+}

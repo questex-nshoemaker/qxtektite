@@ -1,0 +1,22 @@
+.popular {
+  background: $white;
+  border-width: 0 1px 2px 1px;
+  border-style: solid;
+  border-color: rgba($client-gray, 70%);
+  margin-bottom: 2.4rem;
+
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      list-style-type: none;
+      padding: 1.5rem 1.5rem 0;
+      @include list-small;
+
+      &:last-of-type {
+        padding: 1.5rem;
+      }
+    }
+  }
+}

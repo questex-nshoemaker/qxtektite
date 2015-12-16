@@ -1,0 +1,412 @@
+#header {
+  margin-top: 2.4rem;
+  margin-bottom: 2.4rem;
+  height: 64px;
+  transition: background 0.4s ease;
+
+  .wrapper {
+    position: relative;
+    background: $white;
+    border: 1px solid $client-gray;
+  }
+
+  #brand {
+    width: 142px;
+    float: left;
+    margin-left: -128px;
+    left: 50%;
+    position: relative;
+
+    @include breakpoint($lg) {
+      float: left;
+      margin: 0;
+      left: auto;
+    }
+
+    a {
+      display: block;
+      width: 142px;
+      height: auto;
+      margin: 4px auto 5px;
+
+      @include breakpoint($lg) {
+        margin: 5px 0 5px 25px;
+      }
+    }
+  }
+
+  nav {
+    display: none;
+
+    @include breakpoint($lg) {
+      display: block;
+      float: right;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      float: left;
+
+      li {
+        list-style-type: none;
+        float: left;
+
+        a {
+          @include rem(1.4);
+          font-weight: 700;
+          color: $menu-dropdown-bg;
+          text-transform: uppercase;
+          padding: 1.9rem 1.5rem;
+          display: block;
+          transition-duration: .2s;
+
+          @include breakpoint($lg) {
+            padding: 1.9rem 1.5rem 2rem;
+          }
+          @include breakpoint($xl) {
+            @include rem(1.5);
+            padding: 1.9rem 2rem 2rem;
+          }
+
+          &:hover {
+            text-decoration: none;
+            color: $client-primary;
+            transition-duration: .2s;
+          }
+
+          &:focus {
+            text-decoration: none;
+          }
+        }
+
+        &.dropdown {
+
+          & > a {
+            position: relative;
+            padding-right: 3.1rem;
+
+            @include breakpoint($xl) {
+              padding-right: 3.1rem;
+            }
+
+            &:after {
+              content: "";
+              position: absolute;
+              top: 47%;
+              right: 15px;
+              width: 0;
+              height: 0;
+              border-left: 5px solid transparent;
+              border-right: 5px solid transparent;
+              border-top: 6px solid $client-gray;
+              transition-duration: .1s;
+            }
+
+            &:hover:after {
+              border-top: 6px solid $client-primary;
+            }
+          }
+
+          &.active a {
+            color: $client-primary;
+
+            &:after {
+              border-top: 6px solid $client-primary;
+            }
+          }
+
+          .dropdown-menu {
+            float: none;
+            display: none;
+            position: absolute;
+            left: -1px;
+            z-index: 1;
+            width: calc(100% + 2px);
+            background: $menu-dropdown-bg;
+            text-align: center;
+            border: 1px solid $client-gray;
+            @include box-shadow($menu-dropdown-shadow 0 2px 3px inset);
+
+            li {
+              float: none;
+              display: inline-block;
+
+              a {
+                color: $white;
+                text-transform: none;
+                font-weight: normal;
+                @include rem(1.2);
+                padding: 1.9rem 1.2rem;
+
+                @include breakpoint($xl) {
+                  @include rem(1.5);
+                  padding: 2rem 1.2rem;
+                }
+
+                &:hover {
+                  color: $client-gray;
+                }
+              }
+            }
+          }
+
+          &.active .dropdown-menu {
+            display: block;
+          }
+        }
+      }
+
+      &.actions {
+        border-left: 1px solid $client-gray;
+
+        @include breakpoint($lg) {
+          margin: 0 0 0 15px;
+          padding: 0 15px;
+        }
+      }
+    }
+
+    // Mobile menu
+    &.open {
+      display: block;
+      position: absolute;
+      top: 59px;
+      left: -1px;
+      z-index: 999;
+      width: 200px;
+      float: left;
+      background: $white;
+      border: 1px solid $client-gray;
+      border-top: 0;
+
+      @include breakpoint($med) {
+        padding: 2rem 0;
+      }
+
+      ul {
+
+        li {
+          width: 100%;
+
+          &.dropdown {
+
+            & > a:after {
+              right: 20px;
+            }
+
+            ul.dropdown-menu {
+              position: relative;
+              text-align: left;
+              border: 0;
+
+              li a {
+                padding: 1rem 2rem;
+
+                @include breakpoint($med) {
+                  padding: 1.5rem 2.2em;
+                }
+              }
+            }
+          }
+
+          a {
+            padding: 1rem 2rem;
+
+            @include breakpoint($med) {
+              padding: 1.5rem 2.5rem;
+            }
+          }
+        }
+
+        &.actions {
+          border-left: 0;
+          border-top: 1px solid $client-gray;
+
+          @include breakpoint($med) {
+            margin-top: 2rem;
+            padding-top: 2rem;
+          }
+        }
+      }
+    }
+  }
+
+  .search {
+    float: right;
+    background: #fff;
+
+    span {
+      display: block;
+      padding: 1.4rem 1.8rem;
+      text-decoration: none;
+      color: $menu-dropdown-bg;
+      cursor: pointer;
+      border: 0;
+      @include rem(2);
+
+      @include breakpoint($lg) {
+        @include rem(1.6);
+        padding: 1.9rem 1.8rem;
+        height: 62px;
+        border-left: 1px solid $client-gray;
+      }
+
+      &:hover {
+        color: $client-primary;
+      }
+    }
+
+    #searchForm {
+      display: none;
+      position: absolute;
+      left: -1px;
+      top: 0;
+      padding: 1.2rem 0 0 1.5rem;
+      height: 58px;
+      border-left: 1px solid $client-gray;
+      background: $white;
+      width: calc(100% - 52px);
+
+      @include breakpoint($med) {
+        right: 50px;
+        left: inherit;
+        width: auto;
+      }
+
+      @include breakpoint($lg) {
+        height: 62px;
+        padding-top: 1.4rem;
+      }
+
+      label {
+        position: absolute;
+        left: -9999px;
+      }
+
+      input {
+        float: left;
+        border: 0;
+        @include border-radius(0);
+
+        &#search-input {
+          width: 100%;
+          background: $client-gray;
+          color: $white;
+          font-size: 1.5rem;
+          font-weight: 700;
+          text-transform: uppercase;
+
+          @include breakpoint($med) {
+            width: 215px;
+          }
+          @include breakpoint($lg) {
+            width: 285px;
+          }
+          @include breakpoint($xl) {
+            width: 328px;
+          }
+        }
+
+        &#search-submit {
+          //@extend %hiddentext;
+          display: none;
+          position: relative;
+          left: -9999px;
+          width: 1px;
+          height: 1px;
+          background: transparent;
+          text-indent: -9999px;
+          @include box-shadow(none);
+
+          &:hover {
+            background: $menu-dropdown-bg;
+          }
+        }
+      }
+    }
+
+    &.open {
+
+      #searchForm {
+        display: block;
+      }
+    }
+  }
+}
+
+a.menu-icon {
+  float: left;
+  display: block;
+  padding: 1.4rem 1.8rem;
+  color: $menu-dropdown-bg;
+  cursor: pointer;
+  @include rem(2);
+
+  @include breakpoint($lg) {
+    display: none;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &.active {
+    color: $client-primary;
+  }
+}
+
+
+.sticky-header #header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  background: $white;
+  border-bottom: 1px solid $client-gray;
+
+  .wrapper {
+    border: 0;
+
+    @include breakpoint(max-width $med) {
+      width: 100%;
+    }
+
+    nav ul li.dropdown.active ul.dropdown-menu {
+      display: none;
+    }
+  }
+}
+
+
+#scrollProgress {
+  display: none;
+
+  .article &,
+  .article-long & {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 101;
+    height: 1px;
+    //margin-bottom: -2px;
+    background: $client-primary;
+    width: 0%;
+
+    @include breakpoint($med) {
+      display: block;
+    }
+  }
+}
+
+.section #header {
+  @include breakpoint($lg) {
+    margin-bottom: 82px;
+  }
+  @include breakpoint($xl) {
+    margin-bottom: 88px;
+  }
+}

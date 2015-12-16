@@ -1,0 +1,22 @@
+.main-image {
+  position: relative;
+
+  .content {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    @include background(rgba(0,0,0,0.7));
+    padding: 0 2rem;
+    color: $white;
+    @include rem(1.8);
+    line-height: 1.25;
+    font-weight: 700;
+
+    @include breakpoint($med) {
+      @include rem(2.2);
+    }
+    @include breakpoint($lg) {
+      @include rem(2.5);
+    }
+  }
+}

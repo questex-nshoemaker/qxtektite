@@ -1,0 +1,113 @@
+footer {
+  border: 1px solid $gray_30;
+
+  .footer-links {
+    @include clear();
+    padding: 30px 35px 25px;
+
+    section {
+      width: calc(100% / 2);
+      float: left;
+      margin-top: 25px;
+
+      @include breakpoint($med) {
+        padding: 0 5px;
+        margin-top: 0;
+        width: calc(100% / 5);
+      }
+
+      h4 {
+        margin: 0;
+        color: $client-primary;
+        @include rem(1.4);
+      }
+
+      ul {
+        padding: 0;
+
+        li {
+          list-style: none;
+          line-height: 1.4;
+
+          a {
+            color: $gray_30;
+            @include rem(1.4);
+          }
+        }
+      }
+    }
+  }
+
+  .footer-message {
+    @include clear();
+    padding: 15px 20px;
+    background: $gray_30;
+
+    #questex {
+      float: left;
+      width: 100%;
+
+      @include breakpoint($med) {
+        width: 190px;
+      }
+    }
+
+    ul {
+      float: left;
+      width: 100%;
+      margin: 6px 0;
+      padding: 0;
+
+      @include breakpoint($med) {
+        width: auto;
+      }
+
+      li {
+        float: left;
+        list-style: none;
+
+        a {
+          display: inline-block;
+          color: $white;
+          font-weight: bold;
+          @include rem(1.4);
+          padding: 0 6px 0 8px;
+          border-right: 2px solid $white;
+          line-height: 1;
+
+          @include breakpoint($med) {
+            padding: 0 10px 0 12px;
+          }
+        }
+
+        &:first-child a {
+          padding-left: 0;
+
+          @include breakpoint($med) {
+            padding-left: 12px;
+          }
+        }
+
+        &:last-child a {
+          border: 0;
+        }
+      }
+    }
+
+    span {
+      display: inline-block;
+      margin-top: 5px;
+      @include rem(1.2);
+      color: $white;
+
+      @include breakpoint($med) {
+        margin-top: 15px;
+      }
+      @include breakpoint($lg) {
+        margin-top: 0;
+        float: right;
+        text-align: right;
+      }
+    }
+  }
+}

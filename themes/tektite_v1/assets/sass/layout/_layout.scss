@@ -1,0 +1,135 @@
+////////////////////////
+// Layout
+////////////////////////
+
+////////////////////////
+// Variables
+////////////////////////
+
+$med: 768px;
+$lg:  960px;
+$xl: 1200px;
+
+$breakpoint-no-query-fallbacks: true;
+$breakpoint-to-ems: true;
+$container_width: 960px;
+
+$grids                  : 12;
+$gutters                : 1/3;
+$sidebar_first_columns  : 4;
+$sidebar_second_columns : 4;
+
+////////////////////////
+// Mixins / Extends
+////////////////////////
+
+// Mixin for Sticky Footer
+@mixin stickyfooter($height:125px) {
+  html, body {
+    height:100%;
+  }
+  #main-region {
+    min-height: 100%;
+    // equal to footer height
+    margin-bottom: -($height);
+
+    &:after {
+      content: "";
+      display: block;
+    }
+  }
+  #footer, #main-region:after {
+    // the after must be the same height as footer
+    height: $height;
+  }
+}
+
+////////////////////////
+// Styles
+////////////////////////
+
+#main,
+.top-ad,
+#footer,
+.wrapper {
+  @include clear();
+  width: 100%;
+
+  @include breakpoint($med) {
+    width: 768px;
+    margin: 0 auto;
+  }
+  @include breakpoint($lg) {
+    width: 960px;
+  }
+  @include breakpoint($xl) {
+    width: 1200px;
+  }
+}
+
+// The sidebar Locations are static
+#sidebar-first {
+  position: relative;
+  width: 100%;
+  @include breakpoint($med) {
+    @include grid-span($sidebar_first_columns, 1);
+  }
+}
+#sidebar-second {
+  position: relative;
+  width: 100%;
+  @include breakpoint($med) {
+    @include grid-span($sidebar_second_columns, $grids - $sidebar_first_columns + 1);
+  }
+}
+
+// Create different positionings of Main
+#content {
+
+  .sidebar-first & {
+    width: 100%;
+    @include breakpoint($med) {
+      @include grid-span($grids - $sidebar_first_columns, $sidebar_first_columns + 1);
+    }
+  }
+  .sidebar-second & {
+    width: 100%;
+    @include breakpoint($med) {
+      @include grid-span($grids - $sidebar_second_columns, 1);
+    }
+  }
+  .two-sidebars & {
+    width: 100%;
+    @include breakpoint($med) {
+      @include grid-span($grids - $sidebar_first_columns - $sidebar_second_columns, $sidebar_first_columns + 1);
+    }
+  }
+}
+
+// Article sidebar content at bottom
+.article {
+
+  #sidebar-first .bottom,
+  #sidebar-second .bottom {
+
+    @include breakpoint($med) {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+}
+
+// Widespan Pages - Article Bottom, Content Bottom
+.widespan {
+
+  #article-bottom,
+  #content-bottom {
+    padding: 0 0.8rem;
+
+    @include breakpoint($med) {
+      padding: inherit;
+    }
+  }
+}

@@ -1,0 +1,70 @@
+.article {
+
+  #header {
+    margin: 4rem auto;
+  }
+
+  #main {
+
+    .taxonomy {
+      @extend %btn;
+    }
+
+    .byline {
+      padding: .5rem 0 1.5rem 0;
+
+      a {
+        font-style: italic;
+      }
+    }
+
+
+    .article-content {
+      //position: relative;
+
+      .body {
+        background: $white;
+        margin-bottom: 2.4rem;
+        padding: 4rem 2rem 2rem;
+      }
+
+      #social-media {
+        position: absolute;
+        //top: 0;
+        left: 0;
+        z-index: 2;
+        background: $client-primary-light;
+
+        &.sticky {
+          position: fixed;
+        }
+
+        a {
+          display: block;
+          padding: 1rem 1.2rem;
+
+          &:focus,
+          &:hover {
+            text-decoration: none;
+          }
+
+          &:before {
+            @include rem(2.2);
+            color: $white;
+          }
+
+          &:hover:before {
+            color: $client-primary-dark;
+          }
+        }
+      }
+    }
+  }
+
+  &.sticky-header {
+
+    #main {
+      padding-top: 120px;
+    }
+  }
+}

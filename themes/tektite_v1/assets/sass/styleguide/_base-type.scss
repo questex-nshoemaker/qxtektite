@@ -1,0 +1,204 @@
+////////////////////////
+// Text
+//
+// Define defaults for text elements.
+////////////////////////
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,700,700italic);
+
+////////////////////////
+// Variables
+////////////////////////
+
+// Text Sizes in rems
+$base-font-size: 1.6;
+$mobile-font-size: 1.4;
+$base-line-height: 1.5;
+$h1-size: 3.2;
+$h2-size: 2.0;
+$h3-size: 1.8;
+$h4-size: 1.6;
+$h5-size: 1.4;
+$h6-size: 1.2;
+
+$page-title: $h1-size;
+$list-title: 2.5rem;
+
+// Font Families
+$times-new-roman: "Times New Roman", Times, Georgia, serif;
+$times: Times, "Times New Roman", Georgia, serif;
+$georgia: Georgia, "Times New Roman", serif;
+$verdana: Verdana, Tahoma, sans-serif;
+$tahoma: Tahoma, Verdana, sans-serif;
+$helvetica: Helvetica, Arial, sans-serif;
+$arial: Arial, Helvetica, sans-serif;
+$courier: "Courier New", monospace, sans-serif;
+
+$open-sans: "Open Sans", Helvetica, Arial, sans-serif;
+
+// Font Assignments
+$base-font-family: $open-sans; // The font family set on the html element.
+$font-body: $open-sans;
+$font-monospace: $courier;
+$form-font-family: $open-sans;
+
+$h1-family: $open-sans;
+$h2-family: $open-sans;
+$h3-family: $open-sans;
+$h4-family: $open-sans;
+$h5-family: $open-sans;
+$h6-family: $open-sans;
+
+
+////////////////////////
+// Mixins / Extends
+////////////////////////
+
+// Applies to all h tags
+%headings {
+// heading styles
+}
+
+////////////////////////
+// Styles
+////////////////////////
+// Primary Text components
+html {
+  // This allows you to use base 10 to calculate your rems
+  font-size: 62.5%;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-family: $font-body;
+  @include rem($mobile-font-size);
+  line-height: $base-line-height;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  color: $client-gray-dark;
+
+  @include breakpoint($med) {
+    margin-left: 0;
+    margin-right: 0;
+    @include rem($base-font-size);
+  }
+}
+
+h1 {
+  @include rem($h3-size);
+  @extend %headings;
+  color: $client-secondary;
+
+  &.page-title {
+    font-size: $page-title;
+    border-bottom: 1px solid $client-gray;
+    margin: 1rem 0;
+    padding-bottom: 1rem;
+    line-height: 1.25;
+  }
+
+  &.list-title {
+    font-size: $list-title;
+  }
+
+  @include breakpoint($med) {
+    @include rem($h2-size);
+  }
+  @include breakpoint($lg) {
+    @include rem($h1-size);
+  }
+}
+
+h2 {
+  @include rem($h3-size);
+  @extend %headings;
+  color: $client-primary-light;
+
+  @include breakpoint($med) {
+    @include rem($h2-size);
+  }
+}
+
+h3 {
+  @include rem($h4-size);
+  @extend %headings;
+  color: $black;
+
+  @include breakpoint($med) {
+    @include rem($h3-size);
+  }
+}
+
+h4 {
+  @include rem($h5-size);
+  @extend %headings;
+  color: $client-gray;
+
+  @include breakpoint($med) {
+    @include rem($h4-size);
+  }
+}
+
+h5 {
+  @include rem($h6-size);
+  @extend %headings;
+
+  @include breakpoint($med) {
+    @include rem($h5-size);
+  }
+}
+
+h6 {
+  @include rem($h6-size);
+  @extend %headings;
+}
+
+
+blockquote {
+  margin: 0 0 20px;
+  padding: 10px 20px;
+  border-left: 5px solid #eee;
+}
+
+p {}
+
+// Lists
+ul,
+ol {
+  margin: 0;
+  padding-left: 5px;
+}
+
+li {}
+
+
+// Secondary Text Components
+b, strong {}
+
+i, em {}
+
+figcaption {}
+
+figure {}
+
+hr {
+  color: $client-gray;
+}
+
+// Quote
+q {}
+
+// Strikethrough
+s {}
+
+small {}
+
+// Subscript
+sub {}
+
+// Superscript
+sup {}
+
+// Underline
+u {}

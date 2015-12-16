@@ -1,0 +1,15 @@
+#comments {
+  float: left;
+  width: 100%;
+  margin-bottom: 2.4rem;
+
+  @include breakpoint($med) {
+    @include grid-span($grids - $sidebar_second_columns, 1);
+  }
+  @include breakpoint($lg) {
+
+  }
+  @include breakpoint($xl) {
+
+  }
+}

@@ -1,0 +1,42 @@
+.card-img-title-date {
+  background: $white;
+  padding: 2rem 2rem;
+  float: left;
+  max-width: 376px;
+  margin: 0 0 2.4rem 0;
+
+  @include breakpoint($med) {
+    max-width: none;
+    width: 232px;
+    margin: 0 3.5rem 2.4rem 0;
+  }
+  @include breakpoint($lg) {
+    width: 296px;
+  }
+  @include breakpoint($xl) {
+    width: 376px;
+  }
+
+  &:last-of-type {
+    margin: 0 0 2.4rem;
+  }
+
+  img {
+    max-width: none;
+    width: 100%;
+  }
+
+  .card-title {
+    margin: 1.5rem 0 0;
+
+    a {
+      color: $client-secondary;
+      line-height: 1.25;
+    }
+  }
+
+  .card-time {
+    @include rem(1.4);
+    color: $menu-dropdown-bg;
+  }
+}

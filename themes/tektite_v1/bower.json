@@ -1,0 +1,21 @@
+{
+  "name": "Tektite",
+  "version": "0.1.0",
+  "description": "Tektite build dependencies",
+  "authors": [
+    "newmedia",
+    "chartman"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "breakpoint-sass": "~2.5.0",
+    "singularity": "~1.6.2",
+    "compass-mixins": "0.12.7"
+  }
+}

@@ -1,0 +1,93 @@
+// Story grid switcher
+.story-grid-switcher {
+  position: absolute;
+  left: 0;
+  top: 109px;
+  z-index: 20;
+  color: $client-gray-dark;
+  text-align: center;
+  width: 50px;
+  background: $white;
+  @include rem(1.2);
+
+  @include breakpoint($med) {
+    top: 205px;
+  }
+  @include breakpoint($lg) {
+    top: 225px;
+  }
+
+  a {
+    background: $client-primary-light;
+    padding: 3px;
+    display: block;
+    border-top: 1px solid $white;
+    color: $white;
+
+    &:focus,
+    &:hover,
+    &:active {
+      color: $white;
+      background: $client-primary-dark;
+      text-decoration: none;
+    }
+  }
+}
+
+.default {
+  .story-grid-list,
+  .story-grid-3,
+  .story-grid-5 {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+}
+
+// Menu dropdown for section page
+.default,
+.article,
+.article-long,
+.photo-gallery,
+.photo-story {
+
+  #header nav ul li.dropdown {
+
+    & > a {
+      color: $menu-dropdown-bg;
+      position: relative;
+      padding-right: 3.1rem;
+
+      @include breakpoint($xl) {
+        padding-right: 3.1rem;
+      }
+
+      &:hover {
+        color: $client-primary;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 47%;
+        right: 15px;
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 6px solid $client-gray;
+        transition-duration: .1s;
+      }
+
+      &:hover:after {
+        border-top: 6px solid $client-primary;
+      }
+    }
+
+    .dropdown-menu {
+      display: none;
+    }
+  }
+}
