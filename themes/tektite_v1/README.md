@@ -17,12 +17,14 @@ Once node.js is installed, run the following command in your terminal to install
 
 * Fork project off Github
 * In your terminal, cd to [DRUPAL THEME]
-* Run these commands
 
-    - Install necessary node modules once
-      $ npm install
-    - Watch and serve sass/js files and process them
-      $ grunt serve
+Install necessary node modules once. In terminal, run:
+
+    $ npm install
+
+Watch and serve sass/js files and process them.  In terminal, run:
+
+    $ grunt serve
 
 Each time you need to edit files, run 'grunt serve' so they get processed.
 

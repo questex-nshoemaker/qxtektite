@@ -1,16 +1,16 @@
-tektite.small:
+tektite_v1.small:
   label: small
   mediaQuery: ''
   weight: 2
   multipliers:
     - 1x
-tektite.medium:
+tektite_v1.medium:
   label: medium
   mediaQuery: 'all and (min-width: 768px)'
   weight: 1
   multipliers:
     - 1x
-tektite.large:
+tektite_v1.large:
   label: large
   mediaQuery: 'all and (min-width: 1024px)'
   weight: 0
