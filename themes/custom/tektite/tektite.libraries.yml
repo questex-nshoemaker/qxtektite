@@ -1,12 +1,11 @@
-tektite:
-  global-css:
-    css:
-      assets/css/style.css: {}
-  global-js:
-    js:
-      assets/js/jquery.flexslider.min.js: {}
-      assets/js/jquery.stickem.js: {}
-      assets/js/src/scripts.js: {}
-      assets/js/src/temp.js: {}
-    dependencies:
-      - core/jquery
+global-css:
+  css:
+    assets/css/style.css: {}
+global-js:
+  js:
+    assets/js/jquery.flexslider.min.js: {}
+    assets/js/jquery.stickem.js: {}
+    assets/js/src/scripts.js: {}
+    assets/js/src/temp.js: {}
+  dependencies:
+    - core/jquery
