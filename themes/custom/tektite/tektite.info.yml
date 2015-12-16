@@ -6,7 +6,7 @@ screenshot: screenshot.png
 
 regions:
   header:         'Header'
-  main_nav:       'Main Navigation'
+  #main_nav:       'Main navigation'
   help:           'Help'
   highlighted:    'Highlighted'
   content:        'Content'

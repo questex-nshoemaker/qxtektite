@@ -22,7 +22,7 @@ Install necessary node modules once. In terminal, run:
 
     $ npm install
 
-Watch and serve sass/js files and process them.  In terminal, run:
+Watch and serve sass/js files.  In terminal, run:
 
     $ grunt serve
 
