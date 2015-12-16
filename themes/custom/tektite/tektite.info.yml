@@ -1,7 +1,6 @@
 name: Tektite
 description: Custom Drupal 8 theme for the Questex Tektite project.
 type: theme
-base theme: stable
 core: 8.x
 screenshot: screenshot.png
 
@@ -14,10 +13,6 @@ regions:
   sidebar_first:  'Sidebar first'
   sidebar_second: 'Sidebar second'
   footer:         'Footer'
-
-libraries:
-  - tektite/global-css
-  - tektite/global-js
 
 stylesheets-remove:
   - core/modules/system/css/components/fieldgroup.module.css
@@ -40,3 +35,7 @@ stylesheets-remove:
   #- core/modules/system/css/components/hidden.module.css
   #- core/modules/system/css/components/js.module.css
   #- core/modules/system/css/components/progress.module.css
+
+libraries:
+  - tektite/global-css
+  - tektite/global-js
