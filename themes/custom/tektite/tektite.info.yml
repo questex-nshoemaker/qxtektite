@@ -5,8 +5,8 @@ core: 8.x
 screenshot: screenshot.png
 
 regions:
+  header_top:     'Header top'
   header:         'Header'
-  #main_nav:       'Main navigation'
   help:           'Help'
   highlighted:    'Highlighted'
   content:        'Content'
