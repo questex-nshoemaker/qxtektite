@@ -1,6 +1,6 @@
 {
   "name": "tektite",
-  "description": "tektite_v1",
+  "description": "tektite",
   "version": "0.1.0",
   "devDependencies": {
     "grunt": "^0.4.5",

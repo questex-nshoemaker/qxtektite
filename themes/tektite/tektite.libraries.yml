@@ -1,8 +1,7 @@
-tektite_v1:
-  global-styling:
+tektite:
+  global-css:
     css:
-      theme:
-        assets/css/style.css: {}
+      assets/css/style.css: {}
   global-js:
     js:
       assets/js/jquery.flexslider.min.js: {}
